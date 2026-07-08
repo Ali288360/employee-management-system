@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+  --backdrop-blur-xs: 2px;
+}
+
+/* Enable class-based dark mode selector in Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+body {
+  background-color: #f8fafc; /* bg-slate-50 equivalent */
+  color: #0f172a; /* Slate 900 text */
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.dark {
+  background-color: #0b0f19; /* Obsidian dark background */
+  color: #f1f5f9; /* Slate 100 text */
+}
+
+::selection {
+  background-color: var(--color-indigo-500);
+  color: white;
+}
+
+/* Premium Card Style - adhering to rounded-lg, shadow-sm, and border-slate-200 */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #e2e8f0; /* border-slate-200 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.glass-panel-interactive {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #e2e8f0; /* border-slate-200 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .glass-panel-interactive {
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(79, 70, 229, 0.25); /* Indigo hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.08), 0 2px 4px -1px rgba(79, 70, 229, 0.08);
+}
+
+body.dark .glass-panel-interactive:hover {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(79, 70, 229, 0.35);
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.2);
+}
+
+/* Sidebar panel matching bg-slate-900 */
+.sidebar-panel {
+  background-color: #0f172a; /* bg-slate-900 */
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+body.dark .sidebar-panel {
+  background-color: #070a12;
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+body.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 70, 229, 0.4);
+}
