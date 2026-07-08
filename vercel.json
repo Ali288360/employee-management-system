@@ -19,8 +19,16 @@
       "destination": "server/index.js"
     },
     {
+      "source": "/assets/(.*)",
+      "destination": "client/dist/assets/$1"
+    },
+    {
+      "source": "/(favicon.svg|icons.svg)",
+      "destination": "client/dist/$1"
+    },
+    {
       "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "destination": "client/dist/index.html"
     }
   ]
 }
