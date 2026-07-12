@@ -87,9 +87,6 @@ npm run install-all
 npm run dev
 ```
 
-*   **Vite Client**: running on [http://localhost:5173](http://localhost:5173)
-*   **Express Server**: running on [http://localhost:5000](http://localhost:5000)
-
 ---
 
 ## 🔑 Default Credentials
